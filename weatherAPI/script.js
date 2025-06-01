@@ -1,4 +1,4 @@
-const API_KEY = "59c70494285fe7a705427cb577568fdf";
+const API_KEY = "";
 const weatherForm = document.querySelector(".weatherForm");
 const cardDisplay = document.getElementById("cardDisplay");
 const card = document.querySelector(".card");

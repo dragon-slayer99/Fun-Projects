@@ -1,0 +1,21 @@
+body{
+    margin: 0px;
+    height: 100vh;
+}
+.swiper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.swiper-wrapper div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.swiper-slide{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

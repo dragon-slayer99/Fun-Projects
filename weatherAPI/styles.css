@@ -1,0 +1,82 @@
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+
+    
+    padding: 30px;
+    border-radius: 15px;
+
+    .weatherForm {
+        font-weight: bolder;
+
+        input {
+            font-size: 1rem;
+            height: 2.3rem;
+            border: 2px solid rgba(128, 128, 128, 0.31);
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        button {
+            font-size: 1rem;
+            padding: 10px 17px;
+            background-color: hsl(84, 55%, 52%);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: hsl(84, 55%, 40%);
+        }
+    }
+
+    #cardDisplay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+
+        .emoji {
+            font-size: 6rem;
+            margin: 10px 0px;
+
+        }
+
+        .temperature {
+            margin: 0px;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .place {
+            font-size: 1.4rem;
+            margin: 5px 0px;
+        }
+
+        .humidity,
+        .windSpeed,
+        .error {
+            margin: 10px 0px;
+            font-size: 1.1rem;
+        }
+
+        .error {
+
+            font-size: 2rem;
+
+        }
+    }
+
+}

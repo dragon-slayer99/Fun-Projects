@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    body {
+        margin: 10px;
+    }
+
+    #inputField {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 3rem;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #displayImage {
+        margin-top: 10vh;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .imageDimensions {
+        max-height: 300px;
+        max-width: 400px;
+    }
+</style>
+
+
+
+<body>
+    <div id="inputField">
+        Press "Enter" to get random image
+    </div>
+
+    <div id="displayImage"></div>
+
+    <script>
+        const API_KEY = "KQIgpA0VpQeG1bGtuHLWKYXnT2LefKzHsZ1CT_Y9ykQ";
+        const displayImage = document.getElementById("displayImage");
+        async function fetchImage() {
+            displayImage.innerHTML = '';
+            const image = document.createElement("img");
+            image.src = await renderImage();
+            image.classList.add("imageDimensions")
+            displayImage.appendChild(image);
+        }
+
+        async function renderImage() {
+
+            const unsplashURL = `https://api.unsplash.com/photos/random?client_id=${API_KEY}`;
+            try {
+                const response = await fetch(unsplashURL);
+                if (!response.ok) {
+                    const errorMessage = await response.text();
+                    console.error("API Error:", response.status, errorMessage);
+                    return null;
+                }
+                const data = await response.json();
+                const imageURL = data.urls.regular;
+                //console.log(imageURL);
+                return imageURL;
+            }
+            catch (error) {
+                console.error(error);
+            }
+        }
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Enter") {
+                fetchImage();
+            }
+        });
+    </script>
+</body>
+
+</html>
